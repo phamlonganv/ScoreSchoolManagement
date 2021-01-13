@@ -36,9 +36,7 @@
                 </div>
             @endif
 
-                <div>
-                    {{$slot}}
-                </div>
+
         </div>
     </body>
 </html>

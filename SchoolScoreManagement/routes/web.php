@@ -16,7 +16,7 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Route::get('/dashboard', function () {
@@ -24,5 +24,5 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('users', UserController::class)->middleware(['auth']);
-Route::resource('admin', AdminController::class)->middleware(['auth']);
+Route::resource('admin', AdminController::class)->middleware(['auth','role:Admin']);
 require __DIR__.'/auth.php';
