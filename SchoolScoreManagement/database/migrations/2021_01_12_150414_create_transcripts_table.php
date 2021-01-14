@@ -17,7 +17,9 @@ class CreateTranscriptsTable extends Migration
             $table->id();
             $table->integer('student_id');
             $table->integer('subject_id');
+            $table->integer('semester_id');
             $table->integer('scoretype_id');
+            $table->string('scores');
             $table->timestamps();
         });
     }

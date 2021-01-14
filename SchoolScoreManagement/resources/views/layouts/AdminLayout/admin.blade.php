@@ -33,9 +33,9 @@
         @include('layouts.AdminLayout.header')
     <!-- END HEADER -->
 
-    <!-- SECTION -->
+    <!-- aside -->
     @include('layouts.AdminLayout.aside')
-    <!-- END SECTION -->
+    <!-- END aside -->
 
     <!-- Content -->
     @yield('content')

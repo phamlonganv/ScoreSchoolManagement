@@ -9,6 +9,11 @@ class Subject extends Model
 {
     use HasFactory;
     protected $filltable = [
-        'id'
+        'name'
     ];
+    public function teachers()
+    {
+        return $this->hasMany(Subject::class);
+    }
+
 }

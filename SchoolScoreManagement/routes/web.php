@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClassesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +27,5 @@ Route::get('/dashboard', function () {
 
 Route::resource('users', UserController::class)->middleware(['auth']);
 Route::resource('admin', AdminController::class)->middleware(['auth','role:Admin']);
+Route::resource('classes', ClassesController::class)->middleware(['auth','role:Admin']);
 require __DIR__.'/auth.php';

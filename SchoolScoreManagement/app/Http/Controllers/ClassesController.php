@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Teacher;
 
-class UserController extends Controller
+class ClassesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class UserController extends Controller
     public function index()
     {
         //
-        $teacher = Teacher::find(1);
-        $user = $teacher->user;
-        return $user;
+        return view('Admin/classes');
     }
 
     /**

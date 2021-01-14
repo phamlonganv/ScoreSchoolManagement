@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Role;
+use App\Models\Teacher;
 
 class User extends Authenticatable
 {
@@ -18,10 +19,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+
         'name',
         'email',
         'password',
-        'role_id'
+        'role_id',
+        'idcard'
     ];
 
     /**
@@ -46,4 +49,9 @@ class User extends Authenticatable
     {
             return $this->belongsTo(Role::class);
     }
+    public function teacher()
+    {
+            return $this->hasOne(Teacher::class);
+    }
+
 }
